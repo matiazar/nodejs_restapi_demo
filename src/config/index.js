@@ -1,4 +1,10 @@
-require('dotenv').config();
+var dotenv = require('dotenv')
+var dotenvExpand = require('dotenv-expand')
+
+var myEnv = dotenv.config()
+dotenvExpand.expand(myEnv)
+
+// require('dotenv').config();
 
 module.exports.Config = {
     port: process.env.PORT,
