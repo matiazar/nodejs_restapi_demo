@@ -14,14 +14,14 @@ module.exports.Database = (collection) =>
         const client = new MongoClient(Config.mongoUri);
         connection = await client.connect();
         debug("Connected successfully to MongoDB Server");
-  
-    }
+
+      }
 
       const db = connection.db(Config.mongoDb);
       res(db.collection(collection));
 
     } catch (error) {
-        // debug('Already connected to MongoDB Server')
-        rej(error);
+      // debug('Already connected to MongoDB Server')
+      rej(error);
     }
   });
